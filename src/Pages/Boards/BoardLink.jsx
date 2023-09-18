@@ -27,7 +27,7 @@ export default function BoardLink({board, allowed=true}) {
 
         {!allowed && 
         <div  className="inline-flex flex-col w-full">
-            {!true && 
+            {!logging && 
             <>
             <p className={`text-white text-xl text-center py-2 bg-neutral-800 rounded-xl font-mono border-4 border-black tracking-widest w-full`}>{board.name}</p>
             <div className="flex self-center justify-center bg-neutral-950 border-black border gap-1 w-48 rounded-b-lg">
@@ -38,7 +38,7 @@ export default function BoardLink({board, allowed=true}) {
             </div>
             </>}
 
-            {true && 
+            {logging && 
             <>
             <input type="text" placeholder="Password" className="text-input w-full" value={password} onChange={(e) => setPassword(e.target.value)}/>
             <button onClick={login} type="button" className="flex self-center justify-center bg-neutral-950 border-black border gap-1 w-48 rounded-b-lg">Join Board</button>
